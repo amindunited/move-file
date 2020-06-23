@@ -1,6 +1,6 @@
 {
   "name": "@amindunited/move-file",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A promise wrapped filed move / rename function",
   "main": "index.js",
   "scripts": {
