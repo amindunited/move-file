@@ -6,24 +6,13 @@
  * found in the LICENSE file
  */
 'use strict';
-const fs = require('fs');
+const { rename } = require('fs').promises;
 
-const mvFile = function (originalPath, newPath) {
+const mvFile = async (originalPath, newPath) => {
 
-  const promise = new Promise((resolve, reject) => {
+  const file = rename(originalPath, newPath);
+  return file;
 
-    fs.rename(originalPath, newPath, (err, contents) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(contents);
-      }
-    });
-
-  });
-
-  return promise;
-
-}
+};
 
 module.exports = mvFile;
