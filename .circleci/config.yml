@@ -25,6 +25,9 @@ jobs:
       - run:
           name: Run tests
           command: npm test
+      - run:
+          name: Run Build
+          command: npm run build
 
       - save_cache:
           paths:
@@ -43,9 +46,10 @@ jobs:
       - run:
           name: Authenticate with registry
           command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
-      - run:
-          name: Publish package
-          command: npm publish
+      # - run:
+          # name: Publish package
+          # command: npm publish
+      - run: npx semantic-release
 
 workflows:
   version: 2

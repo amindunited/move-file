@@ -5,7 +5,10 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file
  */
-'use strict';
-const mvFile = require('./mv-file');
+import { moveFile } from './move-file';
 
-module.exports = mvFile;
+export default moveFile;
+
+export {
+  moveFile
+}
